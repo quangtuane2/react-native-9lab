@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "lab1-IAmRich",
-    "slug": "lab1-IAmRich",
+    "name": "lab4-Magic8Ball",
+    "slug": "lab4-Magic8Ball",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
