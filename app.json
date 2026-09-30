@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "lab2_micard",
-    "slug": "lab2_micard",
+    "name": "MiCard",
+    "slug": "micard",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,3 +23,4 @@
     }
   }
 }
+
