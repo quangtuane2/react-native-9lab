@@ -15,11 +15,9 @@ import {
 import * as Location from 'expo-location';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
-// --- CẤU HÌNH & HẰNG SỐ (THEO FLUTTER LAB 9 CLIMA) ---
 const OPEN_WEATHER_API_KEY = 'b6907d289e10d714a6e88b30761fae22'; // Demo API key
 const OPEN_WEATHER_BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
-// Bảng màu giao diện hiện đại phong cách Clima Dark Sky
 const THEME = {
   background: '#0F172A', // Nền xanh đêm đậm
   cardBg: '#1E293B',     // Card xám đen xanh
@@ -141,8 +139,6 @@ const MOCK_WEATHER_DATABASE: Record<string, WeatherData> = {
     isMock: true,
   },
 };
-
-// --- CLASS WEATHER MODEL (TƯƠNG ĐƯƠNG VỚI WEATHER_MODEL.DART TRONG FLUTTER) ---
 class WeatherModel {
   static getWeatherIcon(condition: number): string {
     if (condition < 300) return '🌩️'; // Dông bão
@@ -194,7 +190,6 @@ class WeatherModel {
   }
 }
 
-// --- APP CHÍNH ---
 export default function App() {
   // Trạng thái màn hình: 'loading' | 'location' | 'city'
   const [currentScreen, setCurrentScreen] = useState<'loading' | 'location' | 'city'>('loading');
@@ -208,7 +203,7 @@ export default function App() {
     fetchCurrentLocationWeather();
   }, []);
 
-  // 1. LẤY THỜI TIẾT TỪ VỊ TRÍ HIỆN TẠI (GPS / GEOLOCATION)
+  // LẤY THỜI TIẾT TỪ VỊ TRÍ HIỆN TẠI (GPS / GEOLOCATION)
   const fetchCurrentLocationWeather = async () => {
     setCurrentScreen('loading');
     setStatusNote('Đang yêu cầu quyền định vị GPS...');
@@ -262,7 +257,7 @@ export default function App() {
     }
   };
 
-  // 2. LẤY THỜI TIẾT THEO TÊN THÀNH PHỐ
+  // LẤY THỜI TIẾT THEO TÊN THÀNH PHỐ
   const fetchCityWeather = async (cityNameToFetch: string) => {
     const trimmed = cityNameToFetch.trim().toLowerCase();
     if (!trimmed) {
@@ -329,7 +324,7 @@ export default function App() {
     setCurrentScreen('location');
   };
 
-  // ================= 1. MÀN HÌNH LOADING (LOADING SCREEN) =================
+  // MÀN HÌNH LOADING (LOADING SCREEN)
   if (currentScreen === 'loading') {
     return (
       <View style={styles.centerContainer}>
@@ -349,7 +344,7 @@ export default function App() {
     );
   }
 
-  // ================= 2. MÀN HÌNH TÌM KIẾM THÀNH PHỐ (CITY SCREEN) =================
+  // MÀN HÌNH TÌM KIẾM THÀNH PHỐ (CITY SCREEN)
   if (currentScreen === 'city') {
     const popularCities = ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Tokyo', 'London', 'Paris', 'New York'];
 
@@ -426,7 +421,7 @@ export default function App() {
     );
   }
 
-  // ================= 3. MÀN HÌNH CHÍNH (LOCATION SCREEN) =================
+  // MÀN HÌNH CHÍNH (LOCATION SCREEN)
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={THEME.background} />
@@ -516,7 +511,6 @@ export default function App() {
   );
 }
 
-// --- STYLESHEET (GIAO DIỆN HIỆN ĐẠI, KHÔNG CẢNH BÁO DEPRECATED) ---
 const styles = StyleSheet.create({
   container: {
     flex: 1,
