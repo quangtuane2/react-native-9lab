@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "lab1-IAmRich",
-    "slug": "lab1-IAmRich",
+    "name": "lab9-Clima",
+    "slug": "lab9-Clima",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,6 +20,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Cho phép ứng dụng truy cập vị trí để lấy thông tin thời tiết."
+        }
+      ]
+    ]
   }
 }
