@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "lab1-IAmRich",
-    "slug": "lab1-IAmRich",
+    "name": "lab5-Xylophone",
+    "slug": "lab5-Xylophone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,6 +20,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-audio"
+    ]
   }
 }
